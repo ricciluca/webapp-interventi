@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mappa Google</title>
+    <style>
+      /* Imposta l'altezza della mappa per visualizzarla */
+      #map {
+        height: 100%;
+      }
+
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        // Posizione di esempio
+        var posizione = { lat: 41.9028, lng: 12.4964 }; // Roma, Italia
+        // Crea una nuova mappa, centrata su Roma
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8,
+          center: posizione,
+        });
+        // Aggiungi un marker su Roma
+        var marker = new google.maps.Marker({
+          position: posizione,
+          map: map,
+        });
+      }
+    </script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCukOET_iXTjshrR293cxEGRbeVc4B4wgM&callback=initMap"
+    ></script>
+  </body>
+</html>
